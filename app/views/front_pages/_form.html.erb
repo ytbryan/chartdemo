@@ -1,0 +1,17 @@
+<%= form_for(@front_page) do |f| %>
+  <% if @front_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@front_page.errors.count, "error") %> prohibited this front_page from being saved:</h2>
+
+      <ul>
+      <% @front_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
