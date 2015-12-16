@@ -2,38 +2,96 @@
   <a href="http://github.com/ytbryan/chart">Fork me on GitHub</a>
 </div>
 
-<div class="">
-  <%= bar "something", @size1, @data %>
-  <%= bar "somethingelse", @size,  @data %>
-  <%= bar "somethingelse2", @size2,  @data %>
-  <%= bar "somethingelse3", @size1,  @data %>
-  <%= bar "somethingelse5", @size0,  @data %>
-</div>
+<div class="center">
+  <h1 style="text-align:center;">Chart</h1>
 
-<div class="">
-  <%= line "line_id", @lineSize, @lineData %>
-  <%= line "line_id2", @lineSize, @lineData %>
-  <%= line "line_id3", @lineSize, @lineData %>
-  <%= line "line_id4", @lineSize, @lineData %>
-  <%= line "line_id5", @lineSize, @lineData %>
-  <%= line "line_id6", @lineSize, @lineData %>
-</div>
+  <p>
+    Add <span>
+      gem 'chart'
+    </span> to Gemfile.
+  </p>
+  <pre class="brush: ruby">
+    gem 'chart'
+  </pre>
+
+  <p>
+    Add specific javascript <span>
+      gem 'chart'
+    </span> to application.js.
+  </p>
+
+  <pre class="brush: ruby">
+    //= require turbolinks
+    //= require chart
+    //= require nvd3
+  </pre>
+
+  <p>
+    Add css for nvd3 to application.css.
+  </p>
+
+  <pre class="brush: ruby">
+    *= require nvd3
+  </pre>
+
+  <h1 style="text-align:center;">Examples</h1>
+
+  <%= horizontal_grouped_bar "horizontal_grouped_bar", @size1, @horizontal_grouped_bar_array%>
+
+  <pre class="brush: ruby">
+    // horizontal_grouped_bar <%# horizontal_grouped_bar "horizontal_grouped_bar", @size1 %>
+  </pre>
+
+  <%= discrete_bar "first_discrete_bar" , @discrete_bar_size, @discete_bar_array %>
+
+  <pre class="brush: ruby">
+    // discrete_bar
+  </pre>
+
+  <%= boxplot "boxplot", @size1, @data_array_for_boxplot %>
+
+  <pre class="brush: ruby">
+    // boxplot
+  </pre>
+
+  <div class="">
+    <%= bar "something", @bar_size, @data %>
+    <%= bar "somethingelse", @bar_size,  @data2 %>
+    <%= bar "somethingelse2", @bar_size,  @data3 %>
+  </div>
+
+  <pre class="brush: ruby">
+    // simple bar chart
+  </pre>
 
 
-<div class="">
-  <%= pie "pie_id", @pieSize, @pieData %>
-  <%= pie "pie_id2", @pieSize, @pieData%>
-  <%= pie "pie_id3", @pieSize, @pieData%>
-  <%= pie "pie_id4", @pieSize, @pieData%>
-  <%= pie "pie_id5", @pieSize, @pieData%>
-  <%= pie "pie_id6", @pieSize, @pieData%>
-</div>
+  <div class="">
+    <%= line "line_id", @lineSize, @lineData %>
+    <%= line "line_id2", @lineSize, @lineData %>
+    <%= line "line_id3", @lineSize, @lineData %>
+  </div>
 
-<div class="">
-  <%= radar "radar_id", @radarSize, @radarData %>
-  <%= radar "radar_id2", @radarSize, @radarData%>
-  <%= radar "radar_id3", @radarSize, @radarData%>
-  <%= radar "radar_id4", @radarSize, @radarData%>
-  <%= radar "radar_id5", @radarSize, @radarData%>
-  <%= radar "radar_id6", @radarSize, @radarData%>
+  <pre class="brush: ruby">
+    // simple line chart
+  </pre>
+
+
+  <div class="">
+    <%= pie "pie_id", @pieSize, @pieData %>
+  </div>
+
+  <pre class="brush: ruby">
+    // simple line chart
+  </pre>
+
+
+  <div class="">
+    <%= radar "radar_id", @radarSize, @radarData %>
+  </div>
+
+  <pre class="brush: ruby">
+    // simple line chart
+  </pre>
+
+
 </div>

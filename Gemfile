@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'chart', '0.1.2'
+gem 'syntax-highlighter-rails', '~> 3.0', '>= 3.0.83.1.1'
+gem 'chart', path: "/Users/ytbryan/Desktop/chart_gem/chart/"
+# gem 'chart', '0.1.3.pre' #, path: "/Users/ytbryan/Desktop/chart_gem/chart/"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record

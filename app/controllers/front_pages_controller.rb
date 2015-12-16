@@ -8,12 +8,263 @@ class FrontPagesController < ApplicationController
 
   def main
 
+    @horizontal_grouped_bar_array = [
+          {
+              key: 'Series1',
+              values: [
+                  {
+                      "label": "Group A" ,
+                      "value": -1.8746444827653
+                  } ,
+                  {
+                      "label": "Group B" ,
+                      "value": -8.0961543492239
+                  } ,
+                  {
+                      "label": "Group C" ,
+                      "value": -0.57072943117674
+                  } ,
+                  {
+                      "label": "Group D" ,
+                      "value": -2.4174010336624
+                  } ,
+                  {
+                      "label": "Group E" ,
+                      "value": -0.72009071426284
+                  } ,
+                  {
+                      "label": "Group F" ,
+                      "value": -2.77154485523777
+                  } ,
+                  {
+                      "label": "Group G" ,
+                      "value": -9.90152097798131
+                  } ,
+                  {
+                      "label": "Group H" ,
+                      "value": 14.91445417330854
+                  } ,
+                  {
+                      "label": "Group I" ,
+                      "value": -3.055746319141851
+                  }
+              ]
+          },
+          {
+              key: 'Series2',
+              values: [
+                  {
+                      "label": "Group A" ,
+                      "value": 25.307646510375
+                  } ,
+                  {
+                      "label": "Group B" ,
+                      "value": 16.756779544553
+                  } ,
+                  {
+                      "label": "Group C" ,
+                      "value": 18.451534877007
+                  } ,
+                  {
+                      "label": "Group D" ,
+                      "value": 8.6142352811805
+                  } ,
+                  {
+                      "label": "Group E" ,
+                      "value": 7.8082472075876
+                  } ,
+                  {
+                      "label": "Group F" ,
+                      "value": 5.259101026956
+                  } ,
+                  {
+                      "label": "Group G" ,
+                      "value": 7.0947953487127
+                  } ,
+                  {
+                      "label": "Group H" ,
+                      "value": 8
+                  } ,
+                  {
+                      "label": "Group I" ,
+                      "value": 21
+                  }
+              ]
+          },
+          {
+              key: 'Series3',
+              values: [
+                  {
+                      "label": "Group A" ,
+                      "value": -14.307646510375
+                  } ,
+                  {
+                      "label": "Group B" ,
+                      "value": 16.756779544553
+                  } ,
+                  {
+                      "label": "Group C" ,
+                      "value": -18.451534877007
+                  } ,
+                  {
+                      "label": "Group D" ,
+                      "value": 8.6142352811805
+                  } ,
+                  {
+                      "label": "Group E" ,
+                      "value": -7.8082472075876
+                  } ,
+                  {
+                      "label": "Group F" ,
+                      "value": 15.259101026956
+                  } ,
+                  {
+                      "label": "Group G" ,
+                      "value": -0.30947953487127
+                  } ,
+                  {
+                      "label": "Group H" ,
+                      "value": 0
+                  } ,
+                  {
+                      "label": "Group I" ,
+                      "value": 0
+                  }
+              ]
+          }
+      ].to_json
+
+    @discete_bar_array = [
+          {
+              key: "Cumulative Return",
+              values: [
+                  {
+                      label: "A" ,
+                      value: 29.765957771107
+                  } ,
+                  {
+                      label: "B" ,
+                      value: 0
+                  } ,
+                  {
+                      label: "C" ,
+                      value: 32.807804682612
+                  } ,
+                  {
+                      label: "D" ,
+                      value: 196.45946739256
+                  } ,
+                  {
+                      label: "E" ,
+                      value: 0.19434030906893
+                  } ,
+                  {
+                      label: "F" ,
+                      value: -98.079782601442
+                  } ,
+                  {
+                      label: "G" ,
+                      value: 13.925743130903
+                  } ,
+                  {
+                      label: "H" ,
+                      value: 5.1387322875705
+                  }
+              ]
+          }
+      ].to_json
+
+    @data_array_for_boxplot = [
+          {
+            label: "Sample A",
+            values: {
+              Q1: 120,
+              Q2: 150,
+              Q3: 200,
+              whisker_low: 115,
+              whisker_high: 210,
+              outliers: [50, 100, 225]
+            },
+          },
+          {
+            label: "Sample B",
+            values: {
+              Q1: 300,
+              Q2: 350,
+              Q3: 400,
+              whisker_low: 225,
+              whisker_high: 425,
+              outliers: [175]
+            },
+          },
+          {
+            label: "Sample C",
+            values: {
+              Q1: 50,
+              Q2: 100,
+              Q3: 125,
+              whisker_low: 25,
+              whisker_high: 175,
+              outliers: [0]
+            },
+          }
+        ].to_json
+
+    @bar_size = {
+      height: 300,
+      width: 300
+    }
+    @discrete_bar_size = {
+      height: 500,
+      width: 500
+    }
     @size1 = {
-      height: 200,
-      width: 200
+      height: 500,
+      width: 500
     }
 
     @data = {
+      :labels => ["January","February","March","April","May","June","July"],
+      :datasets => [{
+        :label =>"My First dataset",
+        :fillColor => "rgba(151,187,205,0.2)",
+        :strokeColor => "rgba(151,187,205,1)",
+        :highlightFill => "rgba(220,220,220,1)",
+        :highlightStroke => "#fff",
+        :data => [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+      },
+      {
+        :label =>"My First dataset",
+        :fillColor => "rgba(151,187,205,0.2)",
+        :strokeColor => "rgba(151,187,205,1)",
+        :highlightFill => "rgba(220,220,220,1)",
+        :highlightStroke => "#fff",
+        :data => [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+      }]
+    }.to_json
+
+    @data2 = {
+      :labels => ["January","February","March","April","May","June","July"],
+      :datasets => [{
+        :label =>"My First dataset",
+        :fillColor => "rgba(151,187,205,0.2)",
+        :strokeColor => "rgba(151,187,205,1)",
+        :highlightFill => "rgba(220,220,220,1)",
+        :highlightStroke => "#fff",
+        :data => [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+      },
+      {
+        :label =>"My First dataset",
+        :fillColor => "rgba(151,187,205,0.2)",
+        :strokeColor => "rgba(151,187,205,1)",
+        :highlightFill => "rgba(220,220,220,1)",
+        :highlightStroke => "#fff",
+        :data => [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+      }]
+    }.to_json
+
+
+    @data3 = {
       :labels => ["January","February","March","April","May","June","July"],
       :datasets => [{
         :label =>"My First dataset",
