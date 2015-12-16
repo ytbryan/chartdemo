@@ -349,8 +349,8 @@ class FrontPagesController < ApplicationController
 
 
     @pieSize = {
-      :height => 50,
-      :width => 50
+      :height => 500,
+      :width => 500
     }
 
     @pieData = [
@@ -390,8 +390,8 @@ class FrontPagesController < ApplicationController
 
 
     @radarSize = {
-      :height => 50,
-      :width => 50
+      :height => 700,
+      :width => 700
     }
 
 
@@ -423,13 +423,13 @@ class FrontPagesController < ApplicationController
 
 
       @size0 = {
-        :height => 100,
-        :width => 100
+        :height => 500,
+        :width => 500
       }
 
       @size = {
-        :height => 50,
-        :width => 50
+        :height => 500,
+        :width => 500
       }
 
       @size2 = {
