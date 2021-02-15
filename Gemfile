@@ -6,7 +6,7 @@ gem 'chart', path: "/Users/ytbryan/Desktop/chart_gem/chart/"
 
 # gem 'chart', '0.1.3.pre' #, path: "/Users/ytbryan/Desktop/chart_gem/chart/"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '6.0.3.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
